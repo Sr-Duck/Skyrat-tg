@@ -1,3 +1,5 @@
+GLOBAL_LIST_EMPTY(PB_bypass)
+
 /client/proc/panicbunker()
 	set category = "Server"
 	set name = "Toggle Panic Bunker"
@@ -21,3 +23,20 @@
 	if (new_pb && !SSdbcore.Connect())
 		message_admins("The Database is not connected! Panic bunker will not work until the connection is reestablished.")
 	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle Panic Bunker", "[new_pb ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
+/client/proc/addbunkerbypass(ckeytobypass as text)
+	set category = "Server"
+	set name = "Add PB Bypass"
+	
+	GLOB.PB_bypass |= ckey(ckeytobypass)
+	log_admin("[key_name(usr)] has added [ckeytobypass] to the current round's bunker bypass list.")
+	message_admins("[key_name_admin(usr)] has added [ckeytobypass] to the current round's bunker bypass list.")
+
+/client/proc/revokebunkerbypass(ckeytobypass as text)
+	set category = "Server"
+	set name = "Revoke PB Bypass"
+	set desc = "Revoke's a ckey's permission to bypass the panic bunker for a given round."
+
+	GLOB.PB_bypass -= ckey(ckeytobypass)
+	log_admin("[key_name(usr)] has removed [ckeytobypass] from the current round's bunker bypass list.")
+	message_admins("[key_name_admin(usr)] has removed [ckeytobypass] from the current round's bunker bypass list.")

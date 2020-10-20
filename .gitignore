@@ -231,3 +231,8 @@ tools/LinuxOneShot/Database
 tools/LinuxOneShot/TGS_Config
 tools/LinuxOneShot/TGS_Instances
 tools/LinuxOneShot/TGS_Logs
+config/admins.txt
+config/config.txt
+config/dbconfig.txt
+config/game_options.txt
+config/motd.txt

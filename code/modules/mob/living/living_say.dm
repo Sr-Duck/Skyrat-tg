@@ -296,12 +296,14 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 				continue	//Remove if underlying cause (likely byond issue) is fixed. See TG PR #49004.
 			if(M.stat != DEAD) //not dead, not important
 				continue
+			/*
 			if(get_dist(M, src) > 7 || M.z != z) //they're out of range of normal hearing
 				if(eavesdrop_range)
 					if(!(M.client.prefs.chat_toggles & CHAT_GHOSTWHISPER)) //they're whispering and we have hearing whispers at any range off
 						continue
 				else if(!(M.client.prefs.chat_toggles & CHAT_GHOSTEARS)) //they're talking normally and we have hearing at any range off
 					continue
+					*/
 			listening |= M
 			the_dead[M] = TRUE
 
@@ -327,7 +329,6 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 			speech_bubble_recipients.Add(M.client)
 	var/image/I = image('icons/mob/talk.dmi', src, "[bubble_type][say_test(message)]", FLY_LAYER)
 	I.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA
-	//INVOKE_ASYNC(GLOBAL_PROC, /.proc/flick_overlay, I, speech_bubble_recipients, 30) - ORIGINAL
 	INVOKE_ASYNC(GLOBAL_PROC, /.proc/animate_speechbubble, I, speech_bubble_recipients, 30) //SKYRAT EDIT CHANGE - TYPING_INDICATOR
 
 /mob/proc/binarycheck()
@@ -384,11 +385,6 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	return message
 
 /mob/living/proc/radio(message, list/message_mods = list(), list/spans, language)
-	//SKYRAT EDIT ADDITION BEGIN
-	if((message_mods[MODE_HEADSET] || message_mods[RADIO_EXTENSION]) && !(mobility_flags & MOBILITY_USE)) // If can't use items, you can't press the button
-		to_chat(src, "<span class='warning'>You can't use the radio right now!</span>")
-		return ITALICS | REDUCE_RANGE
-	//SKYRAT EDIT END
 	var/obj/item/implant/radio/imp = locate() in src
 	if(imp?.radio.on)
 		if(message_mods[MODE_HEADSET])

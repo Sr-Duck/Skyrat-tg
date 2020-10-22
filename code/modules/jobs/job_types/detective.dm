@@ -38,9 +38,9 @@
 	r_pocket = /obj/item/restraints/handcuffs
 	backpack_contents = list(/obj/item/storage/box/evidence=1,\
 		/obj/item/detective_scanner=1,\
-		/obj/item/melee/classic_baton/telescopic=1)
-		/obj/item/lighter
-		/obj/item/clothing/mask/gas/sechailer
+		/obj/item/melee/classic_baton/telescopic=1,\
+		/obj/item/lighter=1,\
+		/obj/item/clothing/mask/gas/sechailer=1)
 	mask = /obj/item/clothing/mask/cigarette
 
 	implants = list(/obj/item/implant/mindshield)

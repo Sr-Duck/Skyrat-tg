@@ -560,7 +560,7 @@
 	icon_state = "hardsuit0-sec"
 	inhand_icon_state = "sec_helm"
 	hardsuit_type = "sec"
-	armor = list(MELEE = 35, BULLET = 15, LASER = 30,ENERGY = 40, BOMB = 10, BIO = 100, RAD = 50, FIRE = 75, ACID = 75, WOUND = 20)
+	armor = list(MELEE = 35, BULLET = 25, LASER = 30, ENERGY = 40, BOMB = 20, BIO = 100, RAD = 50, FIRE = 75, ACID = 75, WOUND = 20)
 
 
 /obj/item/clothing/suit/space/hardsuit/security
@@ -568,7 +568,7 @@
 	name = "security hardsuit"
 	desc = "A special suit that protects against hazardous, low pressure environments. Has an additional layer of armor."
 	inhand_icon_state = "sec_hardsuit"
-	armor = list(MELEE = 35, BULLET = 15, LASER = 30, ENERGY = 40, BOMB = 10, BIO = 100, RAD = 50, FIRE = 75, ACID = 75, WOUND = 20)
+	armor = list(MELEE = 35, BULLET = 25, LASER = 30, ENERGY = 40, BOMB = 20, BIO = 100, RAD = 50, FIRE = 75, ACID = 75, WOUND = 20)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security
 
 /obj/item/clothing/suit/space/hardsuit/security/Initialize()
@@ -581,14 +581,14 @@
 	desc = "A special bulky helmet designed for work in a hazardous, low pressure environment. Has an additional layer of armor."
 	icon_state = "hardsuit0-hos"
 	hardsuit_type = "hos"
-	armor = list(MELEE = 45, BULLET = 25, LASER = 30, ENERGY = 40, BOMB = 25, BIO = 100, RAD = 50, FIRE = 95, ACID = 95, WOUND = 25)
+	armor = list(MELEE = 40, BULLET = 35, LASER = 30, ENERGY = 40, BOMB = 30, BIO = 100, RAD = 50, FIRE = 95, ACID = 95, WOUND = 25)
 
 
 /obj/item/clothing/suit/space/hardsuit/security/hos
 	icon_state = "hardsuit-hos"
 	name = "head of security's hardsuit"
 	desc = "A special bulky suit that protects against hazardous, low pressure environments. Has an additional layer of armor."
-	armor = list(MELEE = 45, BULLET = 25, LASER = 30, ENERGY = 40, BOMB = 25, BIO = 100, RAD = 50, FIRE = 95, ACID = 95, WOUND = 25)
+	armor = list(MELEE = 40, BULLET = 35, LASER = 30, ENERGY = 40, BOMB = 30, BIO = 100, RAD = 50, FIRE = 95, ACID = 95, WOUND = 25)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/hos
 	jetpack = /obj/item/tank/jetpack/suit
 	cell = /obj/item/stock_parts/cell/super

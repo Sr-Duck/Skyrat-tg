@@ -130,6 +130,7 @@ GLOBAL_PROTECT(admin_verbs_server)
 	/client/proc/panicbunker,
 	/client/proc/addbunkerbypass,
 	/client/proc/revokebunkerbypass,
+	/client/proc/toggle_interviews,
 	/client/proc/toggle_hub,
 	/client/proc/toggle_cdn
 	)
@@ -253,11 +254,9 @@ GLOBAL_LIST_INIT(admin_verbs_hideable, list(
 	/proc/release,
 	/client/proc/reload_admins,
 	/client/proc/panicbunker,
-	/client/proc/addbunkerbypass,
 	/client/proc/revokebunkerbypass,
-	/client/proc/admin_change_sec_level,
+	/client/proc/toggle_interviews,
 	/client/proc/toggle_nuke,
-	/client/proc/cmd_display_del_log,
 	/client/proc/toggle_combo_hud,
 	/client/proc/debug_huds
 	))
